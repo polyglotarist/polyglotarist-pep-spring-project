@@ -16,13 +16,13 @@ public interface MessageRepository extends JpaRepository<Message, Integer> {
     @Modifying
     @Transactional
     @Query("DELETE FROM Message m WHERE m.messageId = :messageId")
-    int deleteByMessageId(int messageId);    
+    int deleteByMessageId(@Param("messageId")int messageId);    
 
     //custom query that updates a message text given message id
     @Modifying
     @Transactional
     @Query("UPDATE Message m SET m.messageText = :messageText WHERE m.messageId = :messageId")
-    int update(int messageId, String messageText);
+    int update(@Param("messageId")Integer messageId, @Param("messageText")String messageText);
 
     // Custom query that finds all messages by a specific user
     @Query("SELECT m FROM Message m WHERE m.postedBy = :accountId")

@@ -34,8 +34,8 @@ public class MessageService {
     }
 
     // 7: Our API should be able to update a message text identified by a message ID.
-    public int update(int id, String text){
-        return messageRepository.update(id, text);
+    public int update(int messageId, String messageText){
+        return messageRepository.update(messageId, messageText);
     }
 
     // 8: Our API should be able to retrieve all messages written by a particular user.
