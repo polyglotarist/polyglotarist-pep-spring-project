@@ -105,17 +105,17 @@ public class SocialMediaController {
 //7
     @PatchMapping("/messages/{messageId}")
     public ResponseEntity<?> updateMessageById(@RequestBody Message message){
-        int id = message.getMessageId();
-        String newText = message.getMessageText();
-        Optional<Message> optionalMessage = Optional.ofNullable(messageService.findById(id));
-        if(optionalMessage.isPresent() && newText.length() > 0 && newText.length() <= 255){
-            Message retrievedMessage = optionalMessage.get();
-            retrievedMessage.setMessageText(newText);
-            int numRowsAffected = messageService.update(id, newText);
-            if(numRowsAffected == 1){
-                return ResponseEntity.status(200).body(numRowsAffected);
-            }
-        }
+        // int id = message.getMessageId();
+        // String newText = message.getMessageText();
+        // Optional<Message> optionalMessage = Optional.ofNullable(messageService.findById(id));
+        // if(optionalMessage.isPresent() && newText.length() > 0 && newText.length() <= 255){
+        //     Message retrievedMessage = optionalMessage.get();
+        //     retrievedMessage.setMessageText(newText);
+        //     int numRowsAffected = messageService.update(id, newText);
+        //     if(numRowsAffected == 1){
+        //         return ResponseEntity.status(200).body(numRowsAffected);
+        //     }
+        // }
         return ResponseEntity.status(400).build();
     }
 //8
