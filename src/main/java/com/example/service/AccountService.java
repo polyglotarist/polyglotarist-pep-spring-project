@@ -36,7 +36,7 @@ public class AccountService {
     
 
 
-    //2: Our API should be able to process User logins.
+    //2: Our API should be able to process User logins. 
     public Account login(String username, String password){
         return accountRepository.findByUsernameAndPassword(username, password);
     }
